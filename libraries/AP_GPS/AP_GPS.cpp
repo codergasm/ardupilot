@@ -1384,7 +1384,8 @@ void AP_GPS::send_mavlink_gps_raw(mavlink_channel_t chan)
     speed_accuracy(0, sacc);
     mavlink_msg_gps_raw_int_send(
         chan,
-        last_fix_time_ms(0)*(uint64_t)1000,
+        //last_fix_time_ms(0)*(uint64_t)1000,
+        time_epoch_usec(0),
         status(0),
         loc.lat,        // in 1E7 degrees
         loc.lng,        // in 1E7 degrees
